@@ -1,0 +1,8 @@
+altair
+pandas
+streamlit
+math
+plotly
+pycoingecko
+datetime
+st_aggrid
