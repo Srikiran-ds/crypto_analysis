@@ -7,7 +7,7 @@ import plotly
 #from pycoingecko import CoinGeckoAPI
 import datetime
 import plotly.express as px
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, JsCode
+#from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, JsCode
 
 st.set_page_config(page_title=None, page_icon=None, layout='wide', initial_sidebar_state='auto')
 
@@ -111,7 +111,8 @@ my_expander = st.beta_expander(label='Expand to view data')
 with my_expander:
 
     #clicked = st.button('Click me!')
-    aggrid(dataset_main)
+    #aggrid(dataset_main)
+    st.write(dataset_main)
 
 my_expander2 = st.beta_expander(label='Expand to Methodology')
 with my_expander2:
