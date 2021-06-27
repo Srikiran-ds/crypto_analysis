@@ -4,7 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 import plotly
-from pycoingecko import CoinGeckoAPI
+#from pycoingecko import CoinGeckoAPI
 import datetime
 import plotly.express as px
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, JsCode
@@ -49,7 +49,7 @@ st.title("Crypto Analysis")
 st.write('___')
 st.write('')
 
-
+'''
 cg = CoinGeckoAPI()
 #data=cg.get_coin_market_chart_range_by_id()
 id_list=pd.DataFrame(cg.get_coins_list(include_platform=False))
@@ -88,6 +88,8 @@ for i in range(id_list.shape[0]):
     except:
         pass
 
+'''
+dataset_main=pd.read_csv('dataset_main.csv',header=True)
 dataset_main['date']=dataset_main['prices'].apply(lambda x: int(str(x[0])[:10]))
 
 #st.write(dataset_main['date'])
