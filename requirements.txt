@@ -1,5 +1,4 @@
 pandas
 streamlit
 plotly
-pycoingecko
 st_aggrid
