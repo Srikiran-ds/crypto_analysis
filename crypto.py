@@ -49,46 +49,7 @@ st.title("Crypto Analysis")
 st.write('___')
 st.write('')
 
-'''
-cg = CoinGeckoAPI()
-#data=cg.get_coin_market_chart_range_by_id()
-id_list=pd.DataFrame(cg.get_coins_list(include_platform=False))
 
-#st.write(id_list)
-
-#lst=['AvalancheAVAX',	'SafeMoonSAFEMOON',	'Huobi TokenHT',	'BitTorrentBTT',	'The GraphGRT',	'Hedera HashgraphHBAR',	'THORChainRUNE',	'DecredDCR',	'KusamaKSM',	'TrueUSDTUSD',	'WavesWAVES',	'Huobi BTCHBTC',	'SushiSUSHI',	'DashDASH',	'ChilizCHZ',	'CompoundCOMP',	'TelcoinTEL',	'ZcashZEC',	'ElrondEGLD',	'QuantQNT',	'yearn.financeYFI',	'HoloHOT',	'Lido Staked EtherSTETH',	'NEMXEM',	'HeliumHNT',	'Synthetix Network TokenSNX',	'Enjin CoinENJ',	'Paxos StandardPAX',	'ZilliqaZIL',	'MdexMDX',	'NearNEAR',	'Basic Attention TokenBAT',	'Liquity USDLUSD',	'XDC NetworkXDC',	'NEXONEXO',	'Bitcoin GoldBTG',	'StacksSTX',	'HorizenZEN',	'HUSDHUSD',	'Bancor Network TokenBNT',	'DecentralandMANA',	'QtumQTUM',	'HarmonyONE',	'NanoNANO',	'DigiByteDGB',	'cUSDTCUSDT',	'KuCoin TokenKCS',	'FantomFTM',	'OntologyONT',	'Pirate ChainARRR']
-#lst=['AVAX',	'SAFEMOON',	'HT',	'BTT',	'HBAR',	'RUNE',	'GRT',	'DCR',	'KSM',	'TUSD',	'WAVES',	'HBTC',	'SUSHI',	'DASH',	'CHZ',	'COMP',	'TEL',	'ZEC',	'EGLD',	'QNT',	'YFI',	'HOT',	'STETH',	'XEM',	'HNT',	'SNX',	'ENJ',	'PAX',	'ZIL',	'MDX',	'NEAR',	'BAT',	'LUSD',	'XDC',	'NEXO',	'BTG',	'STX',	'ZEN',	'HUSD',	'BNT',	'MANA',	'QTUM',	'ONE',	'NANO',	'DGB',	'CUSDT',	'KCS',	'FTM',	'ONT',	'ARRR']
-
-lst=['avalanche',	'safemoon',	'huobi token',	'bittorrent',	'hedera hashgraph',	'thorchain',	'the graph',	'decred',	'kusama',	'trueusd',	'waves',	'huobi btc',	'sushi',	'dash',	'chiliz',	'compound',	'telcoin',	'zcash',	'elrond',	'quant',	'yearn.finance',	'holo',	'lido staked ether',	'nem',	'helium',	'synthetix network token',	'enjin coin',	'paxos standard',	'zilliqa',	'mdex',	'near',	'basic attention token',	'liquity usd',	'xdc network',	'nexo',	'bitcoin gold',	'stacks',	'horizen',	'husd',	'bancor network token',	'decentraland',	'qtum',	'harmony',	'nano',	'digibyte',	'cusdt',	'kucoin token',	'fantom',	'ontology',	'pirate chain',	'ARRR']
-id_list['name']=id_list['name'].str.lower()
-id_list=id_list[id_list['name'].isin(lst)]
-#st.write(id_list)
-#id_list=id_list.head()
-
-#dataset=pd.DataFrame(cg.get_coin_market_chart_range_by_id(id='decentraland',vs_currency='usd', from_timestamp='1616598000',to_timestamp='1624633200'))
-
-#dataset=pd.DataFrame(cg.get_coin_market_chart_range_by_id(ids=list(id_list['id']),vs_currencies='usd',days=91))
-#st.write(dataset)
-dataset_main=pd.DataFrame()
-dataset_main['id']=''
-dataset_main['prices']=''
-dataset_main['market_caps']=''
-dataset_main['total_volumes']=''
-#,'prices','market_caps','total_volumes']
-for i in range(id_list.shape[0]):
-    #st.write(list(id_list['id'])[i])
-    try:
-        dataset=pd.DataFrame(cg.get_coin_market_chart_range_by_id(id=list(id_list['id'])[i],vs_currency='usd', from_timestamp='1616598000',to_timestamp='1624633200'))
-        dataset['id']=list(id_list['id'])[i]
-        dataset=dataset[['id','prices','market_caps','total_volumes']]
-#dataset=pd.DataFrame(cg.get_coin_market_chart_range_by_id(ids=list(id_list['id']),vs_currencies='usd',days=91))
-        #st.write(dataset)
-        dataset_main=dataset_main.append(dataset)
-
-    except:
-        pass
-
-'''
 dataset_main=pd.read_csv('dataset_main.csv',header=True)
 dataset_main['date']=dataset_main['prices'].apply(lambda x: int(str(x[0])[:10]))
 
